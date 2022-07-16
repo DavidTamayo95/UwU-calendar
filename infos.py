@@ -31,11 +31,11 @@ def porcent(index,max):
 def createDownloading(filename,totalBits,currentBits,speed,time,tid=''):
     msg = '📥╭───Downloading... \n'
     msg+= '🔖├File name: ' + str(filename)+'\n'
-    msg+= '🗂├Total size: ' + str(sizeof_fmt(totalBits))+'\n'
-    msg+= '🗂├Downloaded: ' + str(sizeof_fmt(currentBits))+'\n'
+    msg+= '📚├Total size: ' + str(sizeof_fmt(totalBits))+'\n'
+    msg+= '📥├Downloaded: ' + str(sizeof_fmt(currentBits))+'\n'
     msg+= '📶├Speed: ' + str(sizeof_fmt(speed))+'/s\n'
     msg+= '🕐├ETA: ' + str(datetime.timedelta(seconds=int(time))) +'\n'
-    msg += '🗑╰─UwU DELETE\n'
+    msg += '🗑╰─uplodDHbot\n'
 
     msg = '📥╭───Downloading file... '+str(porcent(currentBits,totalBits))+'%\n'
     msg += '🔖├File name: '+filename+'\n'
@@ -43,7 +43,7 @@ def createDownloading(filename,totalBits,currentBits,speed,time,tid=''):
     msg += '🗂├Status: '+sizeof_fmt(currentBits)+' / '+sizeof_fmt(totalBits)+'\n'
     msg += '⚡️├Speed: '+sizeof_fmt(speed)+'/s\n'
     msg += '🕐├ETA: '+str(datetime.timedelta(seconds=int(time)))+'s\n'
-    msg += '🗑╰─UwU DELETE\n'
+    msg += '🗑╰─uplodDHbot\n'
 
     if tid!='':
         msg+= '/cancel_' + tid
@@ -57,7 +57,7 @@ def createUploading(filename,totalBits,currentBits,speed,time,originalname=''):
     msg+= '🗂├Total size: ' + str(sizeof_fmt(currentBits))+'/'+ str(sizeof_fmt(totalBits))+'\n'
     msg+= '⚡️├Speed: ' + str(sizeof_fmt(speed))+'/s\n'
     msg+= '🕐├ETA: ' + str(datetime.timedelta(seconds=int(time))) +'\n'
-    msg+= '🗑╰───UwU DELETE\n'
+    msg+= '🗑╰───uplodDHbot\n'
 
     msg = '🌀╭───Uploading...'+str(porcent(currentBits,totalBits))+'%\n'
     msg += '🔖├File name: '+filename+'\n'
@@ -68,7 +68,7 @@ def createUploading(filename,totalBits,currentBits,speed,time,originalname=''):
     msg += '🗂├Total size: '+sizeof_fmt(currentBits)+'/'+sizeof_fmt(totalBits)+'\n'
     msg += '⚡️├Speed: '+sizeof_fmt(speed)+'/s\n'+'│'+'\n'
     msg += '🕐├ETA: '+str(datetime.timedelta(seconds=int(time)))+'s\n'
-    msg += '🗑╰───UwU DELETE\n'
+    msg += '🗑╰───uplodDHbot\n'
 
     return msg
 def createCompresing(filename,filesize,splitsize):
