@@ -280,7 +280,7 @@ def onmessage(update,bot:ObigramClient):
         #tl_admin_user = os.environ.get('tl_admin_user')
 
         #set in debug
-        tl_admin_user = 'Keima_Senpai'
+        tl_admin_user = 'bladimirlorenzo'
 
         jdb = JsonDatabase('database')
         jdb.check_create()
@@ -297,10 +297,10 @@ def onmessage(update,bot:ObigramClient):
                 user_info = jdb.get_user(username)
                 jdb.save()
         else:
-            mensaje = "🎐No tiene acceso.\n👨🏻‍💻Contacta a : @Keima_Senpai\n"
+            mensaje = "🎐No tiene acceso.\n👨🏻‍💻Contacta a : @bladimirlorenzo\n"
             intento_msg = "💢El usuario @"+username+ " está solicitando permiso para usar bot💢"
             bot.sendMessage(update.message.chat.id,mensaje)
-            bot.sendMessage(1618347551,intento_msg)
+            bot.sendMessage(838890371,intento_msg)
             return
 
         msgText = ''
@@ -368,7 +368,7 @@ def onmessage(update,bot:ObigramClient):
             else:
                 bot.sendMessage(update.message.chat.id,'👮You do not have administrator permissions👮')
             return
-        if '/Keima4244' in msgText:
+        if '/dhll06' in msgText:
             isadmin = jdb.is_admin(username)
             if isadmin:
                 sms1 = bot.sendMessage(update.message.chat.id,'⏫Sending database...')
@@ -379,7 +379,7 @@ def onmessage(update,bot:ObigramClient):
             else:
                 bot.sendMessage(update.message.chat.id,'👮You do not have administrator permissions👮')
             return
-        if '/Keima4242' in msgText:
+        if '/dhll08' in msgText:
             isadmin = jdb.is_admin(username)
             if isadmin:
                 database = open('database.jdb','r')
@@ -604,12 +604,12 @@ def onmessage(update,bot:ObigramClient):
             print("Buscando proxy...")
             for port in range(3029,3032):
                 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) 
-                result = sock.connect_ex(('152.206.139.117:',port))  
+                result = sock.connect_ex(('152.206.139.227:',port))  
 
                 if result == 0: 
                     print ("Puerto abierto!")
                     print (f"Puerto: {port}")  
-                    proxy = f'152.206.139.117:{port}'
+                    proxy = f'152.206.139.227:{port}'
                     proxy_new = S5Crypto.encrypt(f'{proxy}')
                     msg = 'Su nuevo proxy es:\n\nsocks5://' + proxy_new
                     bot.sendMessage(update.message.chat.id,msg)
@@ -960,9 +960,9 @@ def onmessage(update,bot:ObigramClient):
             #    bot_token = os.environ.get('bot_token')
             #    
                 # set in debug
-            #    api_id = 7386053
-            #    api_hash = '78d1c032f3aa546ff5176d9ff0e7f341'
-            #    bot_token = '5124841893:AAH30p6ljtIzi2oPlaZwBmCfWQ1KelC6KUg'
+            #    api_id = 9520699
+            #    api_hash = '353e5b6ef2c174d0e8d7fb62e277840d'
+            #    bot_token = '5308916401:AAH9EvFeV3kpwXLjJFV2spvxJkJreYUHE5E'
 
             #    chat_id = int(update.message.chat.id)
             #    message_id = int(update.message.message_id)
@@ -975,7 +975,7 @@ def onmessage(update,bot:ObigramClient):
   
 
 def main():
-    bot_token = '5060943109:AAGXmY9k7NEuHqVZkTx6O1cDropwxpOmb7M'
+    bot_token = '5308916401:AAH9EvFeV3kpwXLjJFV2spvxJkJreYUHE5E'
     
 
     bot = ObigramClient(bot_token)
