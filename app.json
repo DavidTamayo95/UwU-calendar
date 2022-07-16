@@ -1,5 +1,5 @@
 ﻿{
-  "name": "uloadDHbot",
+  "name": "uploadDHbot",
   "description": "SuperDownload bot listo y preparado para subir a las nubes de cuba.",
   "env": {
     "administrador": {
