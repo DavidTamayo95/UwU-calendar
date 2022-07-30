@@ -116,7 +116,7 @@ def processUploadFiles(filename,filesize,files,update,bot,message,thread=None,jd
                     try:
                         client.saveEvidence(evidence)
                     except:pass
-                return client
+                return draftlist
             else:
                 bot.editMessageText(message,'⚠️Cloud error⚠️')
         elif cloudtype == 'cloud':
