@@ -14,8 +14,8 @@ def text_progres(index,max):
 		index_make = 1
 		make_text += '\n'
 		while(index_make<21):
-			if porcent >= index_make * 5: make_text+='■'
-			else: make_text+='□'
+			if porcent >= index_make * 5: make_text+='●'
+			else: make_text+='○'
 			index_make+=1
 		make_text += '\n'
 		return make_text
@@ -29,7 +29,7 @@ def porcent(index,max):
     return porcent
 
 def createDownloading(filename,totalBits,currentBits,speed,time,tid=''):
-    msg = '📥╭───Downloading... \n'
+    msg = '📥╭───Downloading°•°•🪂 \n'
     msg+= '🔖├File name: ' + str(filename)+'\n'
     msg+= '📚├Total size: ' + str(sizeof_fmt(totalBits))+'\n'
     msg+= '📥├Downloaded: ' + str(sizeof_fmt(currentBits))+'\n'
@@ -37,7 +37,7 @@ def createDownloading(filename,totalBits,currentBits,speed,time,tid=''):
     msg+= '🕐├ETA: ' + str(datetime.timedelta(seconds=int(time))) +'\n'
     msg += '🗑╰─uplodDHbot\n'
 
-    msg = '📥╭───Downloading file... '+str(porcent(currentBits,totalBits))+'%\n'
+    msg = '📥╭───Downloading file°•°•🪂 '+str(porcent(currentBits,totalBits))+'%\n'
     msg += '🔖├File name: '+filename+'\n'
     msg += text_progres(currentBits,totalBits)+'\n'
     msg += '🗂├Status: '+sizeof_fmt(currentBits)+' / '+sizeof_fmt(totalBits)+'\n'
@@ -49,17 +49,17 @@ def createDownloading(filename,totalBits,currentBits,speed,time,tid=''):
         msg+= '/cancel_' + tid
     return msg
 def createUploading(filename,totalBits,currentBits,speed,time,originalname=''):
-    msg = '🌀╭───Uploading... \n'
+    msg = '🔺🚀╭───Uploading•°•°☁️ \n'
     msg+= '🔖├File name: ' + str(filename)+'\n'
     if originalname!='':
         msg = str(msg).replace(filename,originalname)
-        msg+= '🌀├Uploading: ' + str(filename)+'\n'
+        msg+= '🔺├Uploading: ' + str(filename)+'\n'
     msg+= '🗂├Total size: ' + str(sizeof_fmt(currentBits))+'/'+ str(sizeof_fmt(totalBits))+'\n'
     msg+= '⚡️├Speed: ' + str(sizeof_fmt(speed))+'/s\n'
     msg+= '🕐├ETA: ' + str(datetime.timedelta(seconds=int(time))) +'\n'
     msg+= '🗑╰───uplodDHbot\n'
 
-    msg = '🌀╭───Uploading...'+str(porcent(currentBits,totalBits))+'%\n'
+    msg = '🔺🚀╭───Uploading•°•°☁️'+str(porcent(currentBits,totalBits))+'%\n'
     msg += '🔖├File name: '+filename+'\n'
     if originalname!='':
         msg = str(msg).replace(filename,originalname)
@@ -72,19 +72,19 @@ def createUploading(filename,totalBits,currentBits,speed,time,originalname=''):
 
     return msg
 def createCompresing(filename,filesize,splitsize):
-    msg = '🗜╭─Compressing... \n'+'│'+'\n'
+    msg = '🗜╭─Compressing°•°•📚 \n'+'│'+'\n'
     msg+= '🔖├File name: ' + str(filename)+'\n'
     msg+= '🗂├Total size: ' + str(sizeof_fmt(filesize))+'\n'
     msg+= '📚├Parts size: ' + str(sizeof_fmt(splitsize))+'\n'+'│'+'\n'
     msg+= '📤╰─Amount of parts: ' + str(round(int(filesize/splitsize)+1,1))+'\n\n'
     return msg
 def createFinishUploading(filename,filesize,split_size,current,count,findex):
-    msg = '🗜╭───Completed\n'+'│'+'\n'
-    msg+= '🔖├File name: ' + str(filename)+'\n'
-    msg+= '🗂├Total size: ' + str(sizeof_fmt(filesize))+'\n'
-    msg+= '📚├Parts size: ' + str(sizeof_fmt(split_size))+'\n'
-    msg+= '📤├Uploaded parts: ' + str(current) + '/' + str(count) +'\n'+'│'+'\n'
-    msg+= '🗑╰───Delete file: ' + '/del_'+str(findex)
+    msg = '🧞╭───Completed\n'+'│'+'\n'
+    msg+= '🔸├File name: ' + str(filename)+'\n'
+    msg+= '🔸├Total size: ' + str(sizeof_fmt(filesize))+'\n'
+    msg+= '🔸├Parts size: ' + str(sizeof_fmt(split_size))+'\n'
+    msg+= '🔸├Uploaded parts: ' + str(current) + '/' + str(count) +'\n'+'│'+'\n'
+    msg+= '🔸╰───Delete file: ' + '/del_'+str(findex)
     return msg
 
 def createFileMsg(filename,files):
@@ -99,7 +99,7 @@ def createFileMsg(filename,files):
     return ''
 
 def createFilesMsg(evfiles):
-    msg = '📦 Archivos ('+str(len(evfiles))+')\n\n'
+    msg = '☀️ Archivos ('+str(len(evfiles))+')\n\n'
     i = 0
     for f in evfiles:
             try:
@@ -116,7 +116,7 @@ def createFilesMsg(evfiles):
     return msg
 def createStat(username,userdata,isadmin):
     from pyobigram.utils import sizeof_fmt
-    msg = '⚙️╭─ⓘUser dataⓘ─〄\n'+'│'+'\n'
+    msg = '🧞╭─ⓘUser dataⓘ─〄\n'+'│'+'\n'
     msg+= '🔖├Username: @' + str(username)+'\n'
     msg+= '📑├User: ' + str(userdata['moodle_user'])+'\n'
     msg+= '🗳├Password: ' + str(userdata['moodle_password'])+'\n'
@@ -128,16 +128,16 @@ def createStat(username,userdata,isadmin):
     if userdata['cloudtype'] == 'cloud':
         msg+= '🗂├Directory: /' + str(userdata['dir'])+'\n'
     msg+= '📚├Zips size: ' + sizeof_fmt(userdata['zips']*1024*1024) + '\n'
-    msgAdmin = 'No'
+    msgAdmin = '❌'
     if isadmin:
-        msgAdmin = 'Yes'
+        msgAdmin = '✅'
     msg+= '├Administrator: ' + msgAdmin + '\n'
-    proxy = 'No'
+    proxy = '❌'
     if userdata['proxy'] !='':
-       proxy = 'Yes'
-    tokenize = 'Off'
+       proxy = '✅'
+    tokenize = '❌'
     if userdata['tokenize']!=0:
-       tokenize = 'On'
+       tokenize = '✅'
     msg+= '├Proxy setted: ' + proxy + '\n'
     msg+= '├Encrypt links: ' + tokenize + '\n'+'│'+'\n'
     msg+= '╰─ⓘUser dataⓘ─⎔'
